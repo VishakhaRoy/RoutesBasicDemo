@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ContactListComponent } from './contact-list/contact-list.component';
+import { CityListComponent } from './city-list/city-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:"",redirectTo:"contacts",pathMatch:"full"},
+  {path:"contacts",component:ContactListComponent},
+  {path:"cities",component:CityListComponent},
+  {path:"**",component:PageNotFoundComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
